@@ -3,6 +3,86 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+<p style="font-size:1vw;"><font color="white">ADDRESS:
+<a href="https://www.randgallery.com/algo-collection/?address=YBNABNOMH7AYND6LM3OKW3VFMRFD6Y3U6VZMOVFGBXNDO4GNA5AG2U4V7E"> YBNABNOMH7AYND6LM3OKW3VFMRFD6Y3U6VZMOVFGBXNDO4GNA5AG2U4V7E</a></p>
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -119,11 +199,12 @@ h1 {
     width: 100%;
   }
 }
+
 </style>
 </head>
 <body>
 
-<!-- MAIN (Center website) -->
+!-- MAIN (Center website) -->
 <div class="main">
 <!-- <h1><font color="#OF89CA">AlgoPlankton</font>  </h2>-->
 
@@ -147,103 +228,116 @@ h1 {
   <button class="btn" onclick="filterSelection('acid')"> Acid</button> 
 </div>
 
+
+
 <!-- Portfolio Gallery Grid -->
 <div class="row">
   <div class="column original">
     <div class="content">
          <h4><center><font color="white">MEOW_001</font></center> </h4>
-    <img src="./images/meow_001_web.png" alt="original" style="width:100%">
-
+    <img id="meow001" src="./images/meow_001_web.png" alt="Original" style="width:100%;max-width:300px">
     </div>
   </div>
   <div class="column original">
     <div class="content">
          <h4><center><font color="white">MEOW_002</font></center> </h4>
-    <img src="./images/meow_002_web.png" alt="original" style="width:100%">
+    <img id="meow002" src="./images/meow_002_web.png" alt="Original" style="width:100%;max-width:300px">
     </div>
-  </div>
-  <div class="column original">
-    <div class="content">
-         <h4><center><font color="white">MEOW_003</font></center> </h4>
-    <img src="./images/meow_003_web.png" alt="original" style="width:100%">
-    </div>
-  </div>
+  </div>  
+  
     <div class="column original">
     <div class="content">
-         <h4><center><font color="white">MEOW_004</font></center> </h4>
-    <img src="./images/meow_004_web.png" alt="original" style="width:100%">
+         <h4><center><font color="white">MEOW_002</font></center> </h4>
+    <img id="meow003" src="./images/meow_003_web.png" alt="Original" style="width:100%;max-width:300px">
     </div>
-  </div>
+  </div> 
+
     <div class="column original">
     <div class="content">
-         <h4><center><font color="white">MEOW_005</font></center> </h4>
-    <img src="./images/meow_005_web.png" alt="original" style="width:100%">
+         <h4><center><font color="white">MEOW_002</font></center> </h4>
+    <img id="meow004" src="./images/meow_004_web.png" alt="Original" style="width:100%;max-width:300px">
     </div>
-  </div>
-    <div class="column original">
+  </div> 
+  
+  
+      <div class="column original">
     <div class="content">
-         <h4><center><font color="white">MEOW_006</font></center> </h4>
-    <img src="./images/meow_006_web.png" alt="original" style="width:100%">
+         <h4><center><font color="white">MEOW_002</font></center> </h4>
+    <img id="meow005" src="./images/meow_005_web.png" alt="Original" style="width:100%;max-width:300px">
     </div>
-  </div>
-    <div class="column original">
+  </div> 
+  
+  
+      <div class="column original">
     <div class="content">
-         <h4><center><font color="white">MEOW_007</font></center> </h4>
-    <img src="./images/meow_007_web.png" alt="original" style="width:100%">
+         <h4><center><font color="white">MEOW_002</font></center> </h4>
+    <img id="meow006" src="./images/meow_006_web.png" alt="Original" style="width:100%;max-width:300px">
     </div>
-  </div>
-    <div class="column original">
+  </div> 
+  
+      <div class="column original">
     <div class="content">
-         <h4><center><font color="white">MEOW_008</font></center> </h4>
-    <img src="./images/meow_008_web.png" alt="original" style="width:100%">
+         <h4><center><font color="white">MEOW_002</font></center> </h4>
+    <img id="meow007" src="./images/meow_007_web.png" alt="Original" style="width:100%;max-width:300px">
     </div>
-  </div>
-    <div class="column original">
+  </div> 
+  
+      <div class="column original">
     <div class="content">
-         <h4><center><font color="white">MEOW_009</font></center> </h4>
-    <img src="./images/meow_009_web.png" alt="original" style="width:100%">
+         <h4><center><font color="white">MEOW_002</font></center> </h4>
+    <img id="meow008" src="./images/meow_008_web.png" alt="Original" style="width:100%;max-width:300px">
     </div>
-  </div>
-    <div class="column original">
+  </div> 
+  
+      <div class="column original">
     <div class="content">
-         <h4><center><font color="white">MEOW_010</font></center> </h4>
-    <img src="./images/meow_010_web.png" alt="original" style="width:100%">
+         <h4><center><font color="white">MEOW_002</font></center> </h4>
+    <img id="meow009" src="./images/meow_009_web.png" alt="Original" style="width:100%;max-width:300px">
     </div>
-  </div>
+  </div> 
+  
+      <div class="column original">
+    <div class="content">
+         <h4><center><font color="white">MEOW_002</font></center> </h4>
+    <img id="meow010" src="./images/meow_010_web.png" alt="Original" style="width:100%;max-width:300px">
+    </div>
+  </div> 
   
       <div class="column flowers">
     <div class="content">
-         <h4><center><font color="white">MEOW_012</font></center> </h4>
-    <img src="./images/meow_012_web.png" alt="original" style="width:100%">
+         <h4><center><font color="white">MEOW_002</font></center> </h4>
+    <img id="meow012" src="./images/meow_012_web.png" alt="Original" style="width:100%;max-width:300px">
     </div>
-  </div>
+  </div> 
   
       <div class="column flowers">
     <div class="content">
-         <h4><center><font color="white">MEOW_018</font></center> </h4>
-    <img src="./images/meow_018_web.png" alt="original" style="width:100%">
+         <h4><center><font color="white">MEOW_002</font></center> </h4>
+    <img id="meow018" src="./images/meow_018_web.png" alt="Original" style="width:100%;max-width:300px">
     </div>
-  </div>
+  </div> 
+  
   
       <div class="column flowers">
     <div class="content">
          <h4><center><font color="white">MEOW_019</font></center> </h4>
-    <img src="./images/meow_019_web.png" alt="original" style="width:100%">
+    <img  id="meow019" src="./images/meow_019_web.png" alt="original" style="width:100%">
     </div>
   </div>
+  
   
     
       <div class="column palette">
     <div class="content">
          <h4><center><font color="white">MEOW_022</font></center> </h4>
-    <img src="./images/meow_022_web.png" alt="original" style="width:100%">
+    <img id="meow022" src="./images/meow_022_web.png" alt="original" style="width:100%">
     </div>
   </div>
     
       <div class="column water">
     <div class="content">
          <h4><center><font color="white">MEOW_031</font></center> </h4>
-    <img src="./images/meow_031_web.png" alt="original" style="width:100%">
+    <img id="meow031" src="./images/meow_031_web.png" alt="original" style="width:100%">
     </div>
   </div>
   
@@ -251,14 +345,14 @@ h1 {
       <div class="column water">
     <div class="content">
          <h4><center><font color="white">MEOW_033</font></center> </h4>
-    <img src="./images/meow_033_web.png" alt="original" style="width:100%">
+    <img id="meow033" src="./images/meow_033_web.png" alt="original" style="width:100%">
     </div>
   </div>
   
         <div class="column water">
     <div class="content">
          <h4><center><font color="white">MEOW_037</font></center> </h4>
-    <img src="./images/meow_037_web.png" alt="original" style="width:100%">
+    <img id="meow037" src="./images/meow_037_web.png" alt="original" style="width:100%">
     </div>
   </div>
   
@@ -266,7 +360,7 @@ h1 {
       <div class="column pride">
     <div class="content">
          <h4><center><font color="white">MEOW_041</font></center> </h4>
-    <img src="./images/meow_041_web.png" alt="original" style="width:100%">
+    <img id="meow041" src="./images/meow_041_web.png" alt="original" style="width:100%">
     </div>
   </div>
   
@@ -274,7 +368,7 @@ h1 {
       <div class="column paint">
     <div class="content">
          <h4><center><font color="white">MEOW_051</font></center> </h4>
-    <img src="./images/meow_051_web.png" alt="original" style="width:100%">
+    <img id="meow051" src="./images/meow_051_web.png" alt="original" style="width:100%">
     </div>
   </div>
   
@@ -282,7 +376,7 @@ h1 {
       <div class="column paint">
     <div class="content">
          <h4><center><font color="white">MEOW_053</font></center> </h4>
-    <img src="./images/meow_053_web.png" alt="original" style="width:100%">
+    <img id="meow053" src="./images/meow_053_web.png" alt="original" style="width:100%">
     </div>
   </div>
   
@@ -290,21 +384,21 @@ h1 {
       <div class="column paint">
     <div class="content">
          <h4><center><font color="white">MEOW_058</font></center> </h4>
-    <img src="./images/meow_058_web.png" alt="original" style="width:100%">
+    <img id="meow058" src="./images/meow_058_web.png" alt="original" style="width:100%">
     </div>
   </div>
   
       <div class="column neon">
     <div class="content">
          <h4><center><font color="white">MEOW_062</font></center> </h4>
-    <img src="./images/meow_062_web.png" alt="original" style="width:100%">
+    <img id="meow062" src="./images/meow_062_web.png" alt="original" style="width:100%">
     </div>
   </div>  
     
       <div class="column earth">
     <div class="content">
          <h4><center><font color="white">MEOW_073</font></center> </h4>
-    <img src="./images/meow_073_web.png" alt="original" style="width:100%">
+    <img id="meow073" src="./images/meow_073_web.png" alt="original" style="width:100%">
     </div>
   </div>
   
@@ -313,7 +407,7 @@ h1 {
       <div class="column satalite">
     <div class="content">
          <h4><center><font color="white">MEOW_085</font></center> </h4>
-    <img src="./images/meow_085_web.png" alt="original" style="width:100%">
+    <img id="meow085" src="./images/meow_085_web.png" alt="original" style="width:100%">
     </div>
   </div>
   
@@ -322,7 +416,7 @@ h1 {
       <div class="column leaves">
     <div class="content">
          <h4><center><font color="white">MEOW_099</font></center> </h4>
-    <img src="./images/meow_099_web.png" alt="original" style="width:100%">
+    <img id="meow099" src="./images/meow_099_web.png" alt="original" style="width:100%">
     </div>
   </div>
   
@@ -330,7 +424,7 @@ h1 {
       <div class="column space">
     <div class="content">
          <h4><center><font color="white">MEOW_103</font></center> </h4>
-    <img src="./images/meow_103_web.png" alt="space" style="width:100%">
+    <img id="meow103" src="./images/meow_103_web.png" alt="space" style="width:100%">
     </div>
   </div>  
     
@@ -338,7 +432,7 @@ h1 {
       <div class="column space">
     <div class="content">
          <h4><center><font color="white">MEOW_109</font></center> </h4>
-    <img src="./images/meow_109_web.png" alt="space" style="width:100%">
+    <img id="meow109" src="./images/meow_109_web.png" alt="space" style="width:100%">
     </div>
   </div>  
   
@@ -347,24 +441,295 @@ h1 {
       <div class="column acid">
     <div class="content">
          <h4><center><font color="white">MEOW_114</font></center> </h4>
-    <img src="./images/meow_114_web.png" alt="space" style="width:100%">
+    <img id="meow114" src="./images/meow_114_web.png" alt="space" style="width:100%">
     </div>
   </div>  
+  
     
-  
-  
 <!-- END GRID -->
 </div>
 
 
-<p style="font-size:1vw;"><font color="white">ADDRESS:
-<a href="https://www.randgallery.com/algo-collection/?address=YBNABNOMH7AYND6LM3OKW3VFMRFD6Y3U6VZMOVFGBXNDO4GNA5AG2U4V7E"> YBNABNOMH7AYND6LM3OKW3VFMRFD6Y3U6VZMOVFGBXNDO4GNA5AG2U4V7E</a></p>
+<img id="meow001" src="./images/meow_001_web.png" alt="Original" style="width:0%">
 
-
-<!-- END MAIN -->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
 </div>
 
+<p style="font-size:1vw;"><font color="white">ADDRESS:
+<a href="https://www.randgallery.com/algo-collection/?address=YBNABNOMH7AYND6LM3OKW3VFMRFD6Y3U6VZMOVFGBXNDO4GNA5AG2U4V7E"> YBNABNOMH7AYND6LM3OKW3VFMRFD6Y3U6VZMOVFGBXNDO4GNA5AG2U4V7E</a></p>
 <script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("meow001");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "test";
+}
+
+
+var img = document.getElementById("meow002");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+
+var img = document.getElementById("meow003");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+
+
+var img = document.getElementById("meow004");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+
+var img = document.getElementById("meow005");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+
+var img = document.getElementById("meow006");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+
+var img = document.getElementById("meow007");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+
+var img = document.getElementById("meow008");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+
+var img = document.getElementById("meow009");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow010");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow012");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow018");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow019");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow022");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+
+var img = document.getElementById("meow031");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow033");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow037");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+
+var img = document.getElementById("meow041");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow051");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow053");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow058");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow062");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow073");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+
+var img = document.getElementById("meow085");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow099");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow103");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+
+var img = document.getElementById("meow109");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow114");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow019");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+var img = document.getElementById("meow019");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption")
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = "fuck yes";
+}
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("modal")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
