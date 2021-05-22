@@ -1,37 +1,415 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>AlgoKittens | Home</title>
-    <meta
-      name="description"
-      content="meow"
-    />
-    <meta name="author" content="meow" />
-    <style>
-      body {
-        margin: 15px auto;
-        max-width: 650px;
-        line-height: 1.2;
-        font-family: sans-serif;
-        font-size: 2em;
-        color: #fff;
-        background: #444;
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+a {
+        color: #0F89CA;
       }
-      a {
-        color: yellowgreen;
-      }
-    </style>
-  </head>
-  <body onload="main()">
-    <h1>AlgoKittens Welcome Meow</h1>
-    <h2><a href="html/meow001-010.html">MEOW_001-010</a></h2>    
-    <h2><a href="html/meow001-010.html"><img src="images/meow_010_web.png" /></a></h2>    
-    <footer>
-    <hr />
-    <h3><a href="html/about.html">about</a></h3>    
-    <h5><a href="html/index_list.html">index</a></h5>   
-    <p id="output_p"></p>
-    </footer>
-  </body>
+body {
+  background-color:black;
+  padding: 20px;
+  font-family: CMU serif;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+    display: none; /* Hide all elements by default */
+}
+
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: black;
+  padding: 4px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 18px;
+  background-color: #666;
+  cursor: pointer;
+  font-family: CMU serif;
+   color: white;
+}
+
+.btn:hover {
+  background-color:steelblue;
+}
+
+.btn.active {
+  background-color: forestgreen;
+  color: white;
+}
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+<!-- <h1><font color="#OF89CA">AlgoPlankton</font>  </h2>-->
+
+<h2><font color="white">ALGOKITTENS</font> </h2>
+
+
+<div id="myBtnContainer">
+
+  <button class="btn active" onclick="filterSelection('all')">All</button>
+  <button class="btn" onclick="filterSelection('original')"> Original</button> 
+  <button class="btn" onclick="filterSelection('flowers')"> Flowers</button> 
+  <button class="btn" onclick="filterSelection('palette')"> Palette</button>
+  <button class="btn" onclick="filterSelection('water')"> Water</button>
+  <button class="btn" onclick="filterSelection('pride')"> Pride</button>
+  <button class="btn" onclick="filterSelection('paint')"> Paint</button>
+  <button class="btn" onclick="filterSelection('neon')"> Neon</button>
+  <button class="btn" onclick="filterSelection('earth')">Rock</button> 
+  <button class="btn" onclick="filterSelection('satalite')"> Satalite</button> 
+  <button class="btn" onclick="filterSelection('leaves')"> Leaves</button> 
+  <button class="btn" onclick="filterSelection('space')"> Space</button> 
+  <button class="btn" onclick="filterSelection('acid')"> Acid</button> 
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column original">
+    <div class="content">
+         <h4><center><font color="white">MEOW_001</font></center> </h4>
+    <img src="./images/meow_001_web.png" alt="original" style="width:100%">
+
+    </div>
+  </div>
+  <div class="column original">
+    <div class="content">
+         <h4><center><font color="white">MEOW_002</font></center> </h4>
+    <img src="./images/meow_002_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  <div class="column original">
+    <div class="content">
+         <h4><center><font color="white">MEOW_003</font></center> </h4>
+    <img src="./images/meow_003_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+    <div class="column original">
+    <div class="content">
+         <h4><center><font color="white">MEOW_004</font></center> </h4>
+    <img src="./images/meow_004_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+    <div class="column original">
+    <div class="content">
+         <h4><center><font color="white">MEOW_005</font></center> </h4>
+    <img src="./images/meow_005_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+    <div class="column original">
+    <div class="content">
+         <h4><center><font color="white">MEOW_006</font></center> </h4>
+    <img src="./images/meow_006_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+    <div class="column original">
+    <div class="content">
+         <h4><center><font color="white">MEOW_007</font></center> </h4>
+    <img src="./images/meow_007_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+    <div class="column original">
+    <div class="content">
+         <h4><center><font color="white">MEOW_008</font></center> </h4>
+    <img src="./images/meow_008_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+    <div class="column original">
+    <div class="content">
+         <h4><center><font color="white">MEOW_009</font></center> </h4>
+    <img src="./images/meow_009_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+    <div class="column original">
+    <div class="content">
+         <h4><center><font color="white">MEOW_010</font></center> </h4>
+    <img src="./images/meow_010_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+      <div class="column flowers">
+    <div class="content">
+         <h4><center><font color="white">MEOW_012</font></center> </h4>
+    <img src="./images/meow_012_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+      <div class="column flowers">
+    <div class="content">
+         <h4><center><font color="white">MEOW_018</font></center> </h4>
+    <img src="./images/meow_018_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+      <div class="column flowers">
+    <div class="content">
+         <h4><center><font color="white">MEOW_019</font></center> </h4>
+    <img src="./images/meow_019_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+    
+      <div class="column palette">
+    <div class="content">
+         <h4><center><font color="white">MEOW_022</font></center> </h4>
+    <img src="./images/meow_022_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+    
+      <div class="column water">
+    <div class="content">
+         <h4><center><font color="white">MEOW_031</font></center> </h4>
+    <img src="./images/meow_031_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+    
+      <div class="column water">
+    <div class="content">
+         <h4><center><font color="white">MEOW_033</font></center> </h4>
+    <img src="./images/meow_033_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+        <div class="column water">
+    <div class="content">
+         <h4><center><font color="white">MEOW_037</font></center> </h4>
+    <img src="./images/meow_037_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+    
+      <div class="column pride">
+    <div class="content">
+         <h4><center><font color="white">MEOW_041</font></center> </h4>
+    <img src="./images/meow_041_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+    
+      <div class="column paint">
+    <div class="content">
+         <h4><center><font color="white">MEOW_051</font></center> </h4>
+    <img src="./images/meow_051_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+    
+      <div class="column paint">
+    <div class="content">
+         <h4><center><font color="white">MEOW_053</font></center> </h4>
+    <img src="./images/meow_053_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+    
+      <div class="column paint">
+    <div class="content">
+         <h4><center><font color="white">MEOW_058</font></center> </h4>
+    <img src="./images/meow_058_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+      <div class="column neon">
+    <div class="content">
+         <h4><center><font color="white">MEOW_062</font></center> </h4>
+    <img src="./images/meow_062_web.png" alt="original" style="width:100%">
+    </div>
+  </div>  
+    
+      <div class="column earth">
+    <div class="content">
+         <h4><center><font color="white">MEOW_073</font></center> </h4>
+    <img src="./images/meow_073_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+  
+    
+      <div class="column satalite">
+    <div class="content">
+         <h4><center><font color="white">MEOW_085</font></center> </h4>
+    <img src="./images/meow_085_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+  
+      
+      <div class="column leaves">
+    <div class="content">
+         <h4><center><font color="white">MEOW_099</font></center> </h4>
+    <img src="./images/meow_099_web.png" alt="original" style="width:100%">
+    </div>
+  </div>
+  
+  
+      <div class="column space">
+    <div class="content">
+         <h4><center><font color="white">MEOW_103</font></center> </h4>
+    <img src="./images/meow_103_web.png" alt="space" style="width:100%">
+    </div>
+  </div>  
+    
+    
+      <div class="column space">
+    <div class="content">
+         <h4><center><font color="white">MEOW_109</font></center> </h4>
+    <img src="./images/meow_109_web.png" alt="space" style="width:100%">
+    </div>
+  </div>  
+  
+  
+
+      <div class="column acid">
+    <div class="content">
+         <h4><center><font color="white">MEOW_114</font></center> </h4>
+    <img src="./images/meow_114_web.png" alt="space" style="width:100%">
+    </div>
+  </div>  
+    
+  
+  
+<!-- END GRID -->
+</div>
+
+
+<p style="font-size:1vw;"><font color="white">ADDRESS:
+<a href="https://www.randgallery.com/algo-collection/?address=YBNABNOMH7AYND6LM3OKW3VFMRFD6Y3U6VZMOVFGBXNDO4GNA5AG2U4V7E"> YBNABNOMH7AYND6LM3OKW3VFMRFD6Y3U6VZMOVFGBXNDO4GNA5AG2U4V7E</a></p>
+
+
+<!-- END MAIN -->
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
 </html>
+
